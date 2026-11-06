@@ -55,6 +55,7 @@ services.power-profiles-daemon.enable = false;
     pkgs.waydroid
     pkgs.telegram-desktop
     pkgs.snapshot
+    pkgs.git
     # You can also configure declcaratively with `programs.dconf`.
     pkgs.phosh-mobile-settings
   ];
