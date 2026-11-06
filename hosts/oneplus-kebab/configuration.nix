@@ -14,6 +14,7 @@
   #   buildSystem = "x86_64-linux";
   # };
 
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 services.tlp.enable = true;
 services.power-profiles-daemon.enable = false;
@@ -50,6 +51,10 @@ services.power-profiles-daemon.enable = false;
 
   environment.systemPackages = [
     pkgs.alacritty
+    pkgs.firefox
+    pkgs.waydroid
+    pkgs.telegram-desktop
+    pkgs.snapshot
     # You can also configure declcaratively with `programs.dconf`.
     pkgs.phosh-mobile-settings
   ];
