@@ -14,19 +14,13 @@
   #   buildSystem = "x86_64-linux";
   # };
 
-  # vanilla-mobile.device.xiaomi-beryllium = {
-  #   enable = true;
-  #   displayPanel = "tianma";
-  #   # Set this to either "ebbg" or "tianma" depending on your display panel.
-  # };
-
 
 services.tlp.enable = true;
 services.power-profiles-daemon.enable = false;
   users.users.me = {
     isNormalUser = true;
     # Remember to change this after booting!
-    initialPassword = "147258";
+    initialPassword = "1234";
     extraGroups = [
       "wheel"
       "networkmanager"
