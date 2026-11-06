@@ -14,6 +14,13 @@
   #   buildSystem = "x86_64-linux";
   # };
 
+  virtualisation.waydroid.enable = true;
+  # Newer kernel versions may need
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+
+
+
+
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 services.tlp.enable = true;
@@ -52,10 +59,10 @@ services.power-profiles-daemon.enable = false;
   environment.systemPackages = [
     pkgs.alacritty
     pkgs.firefox
-    pkgs.waydroid
     pkgs.telegram-desktop
     pkgs.snapshot
     pkgs.git
+    pkgs.wl-clipboard
     # You can also configure declcaratively with `programs.dconf`.
     pkgs.phosh-mobile-settings
   ];
