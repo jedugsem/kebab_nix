@@ -40,7 +40,8 @@ services.power-profiles-daemon.enable = false;
    openFirewall = false;
    listenAddresses = [
      {
-       addr = "172.16.42.1";
+       #addr = "172.16.42.1";
+       addr = vanilla-mobile.usb-gadget.network.serverAddress;
      }
    ];
  };
