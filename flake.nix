@@ -18,7 +18,8 @@
     }:
     {
       # Create a NixOS configuration for `xiaomi-beryllium`.
-      nixosConfigurations.oneplus-kebab = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = {
+        phone = nixpkgs.lib.nixosSystem {
         modules = [
           # Import the `vanilla-mobile` module.
           vanilla-mobile-nixos.nixosModules.vanilla-mobile
@@ -27,6 +28,17 @@
           # Import the example config.
           ./hosts/oneplus-kebab/configuration.nix
         ];
+      };
+      installer  = nixpkgs.lib.nixosSystem {
+        modules = [
+          # Import the `vanilla-mobile` module.
+          vanilla-mobile-nixos.nixosModules.vanilla-mobile
+          # Import the `disko` module.
+          disko.nixosModules.disko
+          # Import the example config.
+          ./hosts/oneplus-kebab/installer.nix
+        ];
+      };
       };
     };
 }
